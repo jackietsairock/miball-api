@@ -3,12 +3,13 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const multer = require('multer');
 const upload = multer(); // 配置 multer，使用默认存储设置
+require('dotenv').config();
 
 const app = express();
 const PORT = 3000;
 
 const mongoose = require('mongoose');
-const uri = "mongodb+srv://jackietsairock:birth780220@cluster0.qk0hz2e.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = process.env.MONGO_URI;
 const clientOptions = { serverApi: { version: '1', strict: true, deprecationErrors: true } };
 
 mongoose.connect(uri, clientOptions)
