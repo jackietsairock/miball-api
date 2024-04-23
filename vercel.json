@@ -4,10 +4,6 @@
       "src": "app.js",
       "use": "@vercel/node"
     }],
-    "routes": [{
-      "src": "/api/(.*)",
-      "dest": "/api"
-    }],
     "env": {
       "MONGO_URI": "@mongo_uri"
     },
